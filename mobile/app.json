@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Monster Clash: Evolution",
+    "slug": "monster-clash-evolution",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "monsterclash",
+    "userInterfaceStyle": "dark",
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.monsterclash.evolution"
+    },
+    "android": {
+      "package": "app.monsterclash.evolution"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
