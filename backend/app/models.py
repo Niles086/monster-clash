@@ -1,5 +1,6 @@
 from datetime import datetime, timezone
 from typing import Optional
+
 from sqlmodel import Field, SQLModel
 
 
@@ -12,6 +13,13 @@ class User(SQLModel, table=True):
     email: str = Field(index=True, unique=True, max_length=320)
     display_name: str = Field(max_length=40)
     password_hash: str
+
+    level: int = Field(default=1, ge=1)
+    xp: int = Field(default=0, ge=0)
+    coins: int = Field(default=100, ge=0)
+    wins: int = Field(default=0, ge=0)
+    losses: int = Field(default=0, ge=0)
+
     created_at: datetime = Field(default_factory=utc_now)
 
 
@@ -30,6 +38,12 @@ class UserPublic(SQLModel):
     id: int
     email: str
     display_name: str
+    level: int
+    xp: int
+    coins: int
+    wins: int
+    losses: int
+    total_matches: int
 
 
 class TokenResponse(SQLModel):
